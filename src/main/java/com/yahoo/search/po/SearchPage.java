@@ -8,8 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.yahoo.search.data.Data.SEARCH_QUERY;
-import static com.yahoo.search.data.Data.URL;
+import static com.yahoo.search.url.Url.URL;
 
 public class SearchPage {
     private WebDriver driver;
@@ -27,10 +26,8 @@ public class SearchPage {
         driver.get(URL);
     }
 
-    public void inputSearchLineSendKeys(String objectSearch){
-        js.executeScript("arguments[0].value = arguments[1];",inputSearchLineLocator,SEARCH_QUERY);
+    public void inputSearchLineSendKeys(String objectSearch) {
+        js.executeScript("arguments[0].value = arguments[1];", inputSearchLineLocator, objectSearch);
         inputSearchLineLocator.sendKeys(Keys.RETURN);
     }
-
-
 }

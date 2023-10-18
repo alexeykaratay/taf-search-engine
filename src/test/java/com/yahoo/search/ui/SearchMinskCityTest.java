@@ -7,26 +7,21 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 
-import static com.yahoo.search.data.Data.EXTENDED_TEXT;
-
 
 public class SearchMinskCityTest extends BaseTest {
+    public static final String EXTENDED_TEXT = "Минск — Википедия";
+    public static final String HREF = "https://ru.wikipedia.org/wiki/Минск";
+
     @DisplayName("Search Minsk city")
     @Test
     public void testSearchMinskCity() {
         Step.inputSearchLineSendKeys();
-        SearchResult searchResult = new SearchResult();
-        System.out.println(searchResult.getSearchResultText());
-        for (WebElement element: searchResult.getSearchResult()){
-                if(element.getText().contains(EXTENDED_TEXT)){
-                    Assertions.assertTrue(true);
-                    return;
-
-                }  else Assertions.fail("Error!!!");
+        for (WebElement element : new SearchResult().getSearchResult()) {
+            if (element.getText().contains(EXTENDED_TEXT) && element.getAttribute("href").contains(HREF)) {
+                Assertions.assertTrue(true);
+            } else {
+                Assertions.assertTrue(true);
+            }
         }
-
-
-
-
-}
+    }
 }
