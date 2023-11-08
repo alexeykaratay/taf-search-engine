@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 
 
-public class SearchMinskCityTest extends BaseTest {
+public class SearchMinskCityUiTest extends BaseTest {
     public static final String EXTENDED_TEXT = "Минск — Википедия";
     public static final String HREF = "https://ru.wikipedia.org/wiki/Минск";
 

@@ -18,8 +18,8 @@ public class SearchPage {
 
     public SearchPage() {
         this.driver = Singleton.getDriver();
-        PageFactory.initElements(Singleton.getDriver(), this);
-        js = (JavascriptExecutor) Singleton.getDriver();
+        PageFactory.initElements(driver, this);
+        js = (JavascriptExecutor) driver;
     }
 
     public void openSearchPage() {

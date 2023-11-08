@@ -8,9 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 public class BaseTest {
     @BeforeEach
     public void driverSetup() {
-        SearchPage searchPage = new SearchPage();
-        Singleton.getDriver().manage().window().maximize();
-        searchPage.openSearchPage();
+       new SearchPage().openSearchPage();
     }
 
     @AfterEach
